@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: nginx:1.20-alpine
+    runs-on: ubuntu-latest
     steps:
       -
         name: Checkout
