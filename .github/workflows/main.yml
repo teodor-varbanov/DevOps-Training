@@ -28,4 +28,4 @@ jobs:
           context: ./GitHub Actions Test/
           file: ./GitHub Actions Test/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/dodohub:latest
