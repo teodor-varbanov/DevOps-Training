@@ -1,0 +1,27 @@
+---
+- hosts: localhost
+  gather_facts: no
+  become: no
+
+  vars:
+    app_host: "0.0.0.0"
+    app_port: "5001"
+
+  tasks:
+    - name: Create DIR
+      file:
+        dest: code/
+        state: directory
+
+    - name: Get latest application code from GitHub
+      git:
+        repo: https://github.com/teodor-varbanov/DevOps-Training.git
+        version: main ## can be version, can be branch name
+        dest: code/
+    - name: Install Python libraries
+      pip:
+        chdir: code/
+        requirements: "requirements.txt"
+        state: present
+    - name: Start Flask app
+      shell: "flask run -h {{app_host}} -p {{app_port}} &"
