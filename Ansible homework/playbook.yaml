@@ -27,5 +27,5 @@
         name: "{{ image_name }}:{{ image_tag }}"
         source: build
         build:
-          path: /home/dodo/DevOps [Telerik]/DevOps-Training/Ansible homework
+          path: /home/dodo/DevOps [Telerik]/DevOps-Training/Ansible homework/code/Docker exercises
         state: present
