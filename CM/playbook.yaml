@@ -18,9 +18,11 @@
         repo: https://github.com/teodor-varbanov/DevOps-Training.git
         version: main ## can be version, can be branch name
         dest: code/
+      environment:
+        GIT_TERMINAL_PROMPT: 0 
     - name: Install Python libraries
       pip:
-        chdir: code/
+        chdir: code/Docker exercises/
         requirements: "requirements.txt"
         state: present
     - name: Start Flask app
