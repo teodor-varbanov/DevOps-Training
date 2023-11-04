@@ -1,12 +1,13 @@
 ---
 - hosts: localhost
   gather_facts: no
-  become: no
+  become: yes
 
   vars:
     image_name: "test"
-    image_tag: "0.2"
+    image_tag: "0.1"
     listen_port: "5000"
+    exposed_port: "5000"
 
   tasks:
     - name: Create code/ DIR
@@ -35,8 +36,7 @@
       docker_container:
         name: "{{ image_name }}"
         image: "{{ image_name }}:{{ image_tag }}"
-        state: present
-        exposed_ports:
-          - 5000
-        published_ports:
-          - "5000:5000"
+        state: started
+        detach: true
+        ports:
+          - "{{ exposed_port }}:{{ listen_port }}"
