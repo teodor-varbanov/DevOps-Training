@@ -1,10 +1,10 @@
 ---
 - hosts: localhost
   gather_facts: no
-  become: yes
+  become: no
 
   vars:
-    image_name: "test"
+    image_name: "pyapp"
     image_tag: "0.1"
     listen_port: "5000"
     exposed_port: "5000"
@@ -31,6 +31,8 @@
         build:
           path: /home/dodo/DevOps [Telerik]/DevOps-Training/Ansible homework/code/Docker exercises
         state: present
+        push: true
+        repository: dodo1845/dodohub
 
     - name: Run Docker container
       docker_container:
