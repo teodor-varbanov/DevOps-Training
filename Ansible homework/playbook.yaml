@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   gather_facts: no
-  become: no
+  become: yes
 
   vars:
     image_name: "pyapp"
@@ -10,6 +10,10 @@
     exposed_port: "5000"
 
   tasks:
+    - name: Include vault vars
+      ansible.builtin.include_vars:
+        file: secret.yaml
+        
     - name: Create code/ DIR
       file:
         dest: code/
@@ -24,6 +28,11 @@
       environment:
         GIT_TERMINAL_PROMPT: 0 
     
+    - name: Log into DockerHub
+      docker_login:
+        username: dodo1845
+        password: "{{ docker_pass }}"
+
     - name: Build container image
       docker_image:
         name: "{{ image_name }}:{{ image_tag }}"
