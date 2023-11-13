@@ -1,8 +1,8 @@
-name: CI Exercise 
+name: CI Exercise test
 
 on:
   push:
-    branches: [ "test" ]
+    branches: "*"
 
 jobs:
 
