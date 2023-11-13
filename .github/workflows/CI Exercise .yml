@@ -21,6 +21,14 @@ jobs:
       - uses: rickstaa/action-black@v1
         with:
           black_args: ". --check"
+  scan:
+    name: gitleaks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
 
   build:
     runs-on: ubuntu-latest
