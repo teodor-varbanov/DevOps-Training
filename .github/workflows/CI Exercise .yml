@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - uses: editorconfig-checker/action-editorconfig-checker@test
+      - uses: editorconfig-checker/action-editorconfig-checker@main
       - run: editorconfig-checker
 
   linter_name:
