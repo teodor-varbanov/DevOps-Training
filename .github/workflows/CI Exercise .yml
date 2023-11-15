@@ -50,6 +50,8 @@ jobs:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/python-3.10@master
+        with:
+          context: ./GitHub Actions Test/
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
