@@ -47,6 +47,8 @@ jobs:
             projectBaseDir: CM
             args: >
               -Dsonar.organization=test-organization
+              -Dsonar.projectKey=dodo-test-projectkey-1845
+              -Dsonar.verbose=true
                   
   security:
     runs-on: ubuntu-latest
