@@ -64,7 +64,7 @@ jobs:
     steps:
       - name: Execute unit-test
         run: |
-          cd './DevOps-Training/Docker exercises/'
+          cd '/home/runner/work/DevOps-Training/Docker exercises/'
           python -m unittest app_test.py
 
   build:
