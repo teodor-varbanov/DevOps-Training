@@ -45,8 +45,11 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
             projectBaseDir: CM
-          
-          
+            args: >
+              -Dsonar.organization=test-organization
+              -Dsonar.projectKey=test-projectkey
+              -Dsonar.verbose=true
+                  
   security:
     runs-on: ubuntu-latest
     steps:
