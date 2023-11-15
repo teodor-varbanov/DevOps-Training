@@ -44,7 +44,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-            projectBaseDir: 'Docker exercises'
+            projectBaseDir: CM
           
           
   security:
