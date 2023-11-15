@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Execute unit-test
-        working-directory: 'Docker exercises/app/'
+        working-directory: '/home/runner/work/Docker exercises/app/'
         run: |
           python -m unittest app_test.py
 
